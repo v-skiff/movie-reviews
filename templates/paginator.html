@@ -1,0 +1,20 @@
+{% if is_paginated %}
+    <div class="pagination2">
+        <span>Page {{ page_obj.number }} of {{ paginator.num_pages }}:</span>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><i class="ion-arrow-left-b"></i></a>
+        {% endif %}
+        {% for i in paginator.page_range %}
+            {% if forloop.counter|add:2 > page_obj.number and forloop.counter < page_obj.number|add:2 %}
+                {% if page_obj.number == i %}
+                    <a class="active" href="#">{{ i }}</a>
+                {% else %}
+                    <a href="?page={{ i }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">{{ i }}</a>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><i class="ion-arrow-right-b"></i></a>
+        {% endif %}
+    </div>
+{% endif %}

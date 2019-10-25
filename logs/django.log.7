@@ -1,0 +1,114 @@
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '' [name='home']>], [<URLPattern '<slug:slug>' [name='catalog']>], [<URLPattern 'movie/<slug:slug>' [name='movie']>], [<URLPattern 'search/' [name='search']>], [<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django_summernote.urls' from '/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django_summernote/urls.py'> (None:None) 'summernote/'>], [<URLPattern 'robots.txt'>], [<URLResolver <module 'debug_toolbar.toolbar' from '/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/debug_toolbar/toolbar.py'> (djdt:djdt) '__debug__/'>], [<URLPattern '^static/(?P<path>.*)$'>], [<URLPattern '^media/(?P<path>.*)$'>]], 'path': 'index.html'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '' [name='home']>], [<URLPattern '<slug:slug>' [name='catalog']>], [<URLPattern 'movie/<slug:slug>' [name='movie']>], [<URLPattern 'search/' [name='search']>], [<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django_summernote.urls' from '/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django_summernote/urls.py'> (None:None) 'summernote/'>], [<URLPattern 'robots.txt'>], [<URLResolver <module 'debug_toolbar.toolbar' from '/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/debug_toolbar/toolbar.py'> (djdt:djdt) '__debug__/'>], [<URLPattern '^static/(?P<path>.*)$'>], [<URLPattern '^media/(?P<path>.*)$'>]], 'path': 'index.html'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'django_summernote.urls' from '/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django_summernote/urls.py'> (None:None) 'summernote/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/core/handlers/base.py", line 100, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/urls/resolvers.py", line 567, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLPattern '' [name='home']>], [<URLPattern '<slug:slug>' [name='catalog']>], [<URLPattern 'movie/<slug:slug>' [name='movie']>], [<URLPattern 'search/' [name='search']>], [<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django_summernote.urls' from '/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django_summernote/urls.py'> (None:None) 'summernote/'>], [<URLPattern 'robots.txt'>], [<URLResolver <module 'debug_toolbar.toolbar' from '/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/debug_toolbar/toolbar.py'> (djdt:djdt) '__debug__/'>], [<URLPattern '^static/(?P<path>.*)$'>], [<URLPattern '^media/(?P<path>.*)$'>]], 'path': 'index.html'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'debug_toolbar.toolbar' from '/home/skiff/anaconda3/envs/jun/lib/python3.7/site-packages/debug_toolbar/toolbar.py'> (djdt:djdt) '__debug__/'>
+(0.004) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2019-10-23 11:54:37.381986' AND "django_session"."session_key" = 'b0rv54qdo0l6499d3prnz0h54h5w6cgh'); args=('2019-10-23 11:54:37.381986', 'b0rv54qdo0l6499d3prnz0h54h5w6cgh')
+Not Found: /index.html
+"GET /index.html HTTP/1.1" 404 12394

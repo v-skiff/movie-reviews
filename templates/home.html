@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="slider movie-items">
+	<div class="container">
+		<div class="row">
+			<div class="social-link">
+				<p>Follow us: </p>
+				<a href="//facebook.com" target="_blank"><i class="ion-social-facebook"></i></a>
+				<a href="//twitter.com" target="_blank"><i class="ion-social-twitter"></i></a>
+				<a href="//google.com" target="_blank"><i class="ion-social-googleplus"></i></a>
+				<a href="//youtube.com" target="_blank"><i class="ion-social-youtube"></i></a>
+			</div>
+	    	<div  class="slick-multiItemSlider">
+				{% for movie in movies %}
+					<div class="movie-item">
+						<div class="mv-img">
+							<a href="index.html#"><img src="{{ movie.img.url }}" alt="" width="285" height="437"></a>
+						</div>
+						<div class="title-in">
+							<div class="cate">
+								<span class="blue"><a href="{% url 'catalog' movie.genre.all.first.slug %}">{{ movie.genre.all.first }}</a></span>
+							</div>
+							<h6><a href="{% url 'movie' movie.slug %}">{{ movie.name }}</a></h6>
+							<p><i class="ion-android-star"></i><span>{{ movie.rate }}</span> /5</p>
+						</div>
+					</div>
+				{% endfor %}
+	    	</div>
+	    </div>
+	</div>
+</div>
+
+<div class="movie-items">
+	<div class="container">
+		<div class="row ipad-width">
+			<div class="col-sm-offset-2 col-sm-8">
+				<div class="title-hd">
+					<h2>in theater</h2>
+				</div>
+				<div class="tabs">
+					<ul class="tab-links">
+						<li class="active"><a href="index.html#tab1">#Popular</a></li>
+					</ul>
+				    <div class="tab-content">
+				        <div id="tab1" class="tab active">
+				            <div class="row">
+				            	<div class="slick-multiItem">
+									{% for theater_movie in theater_movies %}
+										<div class="slide-it">
+											<div class="movie-item">
+												<div class="mv-img">
+													<img src="{{ theater_movie.img.url }}" alt="" width="185" height="284">
+												</div>
+												<div class="hvr-inner">
+													<a  href="{% url 'movie' theater_movie.slug %}"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+												</div>
+												<div class="title-in">
+													<h6><a href="{% url 'movie' theater_movie.slug %}">{{ theater_movie.name }}</a></h6>
+													<p><i class="ion-android-star"></i><span>{{ theater_movie.rate }}</span> /5</p>
+												</div>
+											</div>
+										</div>
+									{% endfor %}
+				            	</div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="title-hd">
+					<h2>on tv</h2>
+				</div>
+				<div class="tabs">
+					<ul class="tab-links-2">
+						<li><a href="index.html#tab21">#Popular</a></li>
+					</ul>
+				    <div class="tab-content">
+				        <div id="tab21" class="tab active">
+				            <div class="row">
+				            	<div class="slick-multiItem">
+									{% for ontv_movie in ontv_movies %}
+										<div class="slide-it">
+											<div class="movie-item">
+												<div class="mv-img">
+													<img src="{{ ontv_movie.img.url }}" alt="" width="185" height="284">
+												</div>
+												<div class="hvr-inner">
+													<a  href="{% url 'movie' ontv_movie.slug %}"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+												</div>
+												<div class="title-in">
+													<h6><a href="{% url 'movie' ontv_movie.slug %}">{{ ontv_movie.name }}</a></h6>
+													<p><i class="ion-android-star"></i><span>{{ ontv_movie.rate }}</span> /5</p>
+												</div>
+											</div>
+										</div>
+									{% endfor %}
+				            	</div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="trailers">
+	<div class="container">
+		<div class="row ipad-width">
+			<div class="col-md-12">
+				<div class="title-hd">
+					<h2>in theater</h2>
+				</div>
+				<div class="videos">
+				 	<div class="slider-for-2 video-ft">
+						{% for theater_movie in theater_movies %}
+							<div>
+								<iframe class="item-video" src="index.html" data-src="{{ theater_movie.trailer }}"></iframe>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="slider-nav-2 thumb-ft">
+						{% for theater_movie in theater_movies %}
+							<div class="item">
+								<div class="trailer-img">
+									<img src="{{ theater_movie.img.url }}"  alt="photo by Barn Images" width="4096" height="2737">
+								</div>
+								<div class="trailer-infor">
+									<h4 class="desc">{{ theater_movie.name }}</h4>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>   
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock main %}
